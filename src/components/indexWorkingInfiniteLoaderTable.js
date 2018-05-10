@@ -35,7 +35,7 @@ const loadMoreRows = async ({ startIndex, stopIndex }) => {
   }
 
   try {
-    const response = await axios.post(`http://dev.discernica.com/cgi-bin/wspd_cgi.sh/WService=EDZARWSB/OEPX/handler.p?object=gl.DetailQuery&CDList=0005|0&AcctList=1110&FromDate=2017-01-01&action=query&userid=jim&start=${startIndex}&limit=${stopIndex}`);
+    const response = await axios.post(`${process.env.REACT_APP_DETAIL_QUERY}&start=${startIndex}&limit=${stopIndex}`);
     const data = response.data.Detail;
     let x = 0;
     for (let i = startIndex; i < stopIndex; i++) {
@@ -77,11 +77,3 @@ ReactDOM.render(
   document.getElementById('root')
 );
 registerServiceWorker();
-
-/* <Table
-    rowGetter={rowGetter}
-    rowRenderer={rowRenderer}
-    rowCount={rowCount}
-    >
-    <Column label='Seq. No.' dataKey='seqno'/>
-    </Table> */
