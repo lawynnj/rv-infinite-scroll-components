@@ -1,0 +1,3 @@
+export const LOAD_NEXT_PAGE = 'LOAD_NEXT_PAGE';
+export const NEXT_PAGE_LOADING = 'NEXT_PAGE_LOADING';
+
